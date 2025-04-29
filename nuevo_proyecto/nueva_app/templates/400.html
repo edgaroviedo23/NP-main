@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 400 - Solicitud incorrecta</title>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+<body>
+    <div class="container" style="text-align: center; padding: 80px 20px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Error 400</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">La solicitud no pudo ser procesada. Es posible que esté mal formada.</p>
+        <a href="{% url 'home' %}" class="btn">Volver al inicio</a>
+    </div>
+</body>
+</html>

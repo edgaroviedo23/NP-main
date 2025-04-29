@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Confirmar Borrado {% endblock %}
+
+{% block content %}
+<h4>¿Borrar el Post?</h4>
+<p>{{ object.title }}</p>
+<p>{{ object.content }}...</p>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Si, eliminar comentario</button>
+</form>
+<a href="{% url 'post_detail' object.pk %}">Cancelar</a>
+{% endblock %}

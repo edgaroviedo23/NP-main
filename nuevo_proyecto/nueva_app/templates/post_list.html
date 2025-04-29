@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} Post List {% endblock %}
+
+{% block content %}
+<div class="blog-header">
+  <h1 class="titulo">Lista de posts</h1>
+  <div class="action-buttons">
+    <a href="{% url 'post_create' %}" class="button">Crea Post</a>
+    <a href="{% url 'tag_list' %}" class="button">Crear tag</a>
+    <button id="btn-theme-toggle" class="button">Modo Oscuro</button>
+  </div>
+</div>
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="mensaje {{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<div class="grid">
+    {% for post in object_list %}
+        <div class="tarjeta">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content|truncatechars:10 }}</p>
+            <a href="{% url 'post_detail' post.pk %}">Lee el post</a>
+            <div class="tags">
+                {% for tag in post.tags.all %}
+                    <a href="{% url 'post_list_by_tag' tag.pk %}" class="tag-link">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

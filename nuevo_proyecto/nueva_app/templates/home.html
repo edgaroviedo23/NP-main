@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center;">Bienvenido</h1>
+    <p>Bienvenido a nuestro espacio dedicado a la programación. Aquí encontrarás artículos, consejos y posteos sobre las últimas tendencias, herramientas y mejores prácticas en el mundo de la tecnología y el desarrollo de software. ¡Explora y aprende con nosotros!</p>
+
+
+
+    {% if user.is_authenticated %}
+        <p>Hola, {{ user.username }}!</p>
+        <div class="auth-links">
+            <a href='{% url "post_list" %}' class="navbar_a">Ver blogs</a>
+            <a href="{% url 'logout' %}" class="button">Cerrar sesión</a> 
+        </div>
+    {% endif %}
+
+
+    <br>
+    <hr class="hr-line">
+
+
+    {% for mensaje in messages %}
+        <p class="message">{{ mensaje }}</p>
+    {% endfor %}
+
+
+{% endblock %}

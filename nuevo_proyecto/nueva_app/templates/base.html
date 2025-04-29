@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>{% block title %} Test CRUD {% endblock %}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet'  media='screen' href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <style>
+        #cookie-banner{
+            position:fixed; bottom:0; left:0; right:0;
+            background: #777; color:#222; 
+            padding:1rem; text-align:center;
+        }
+        #cookie-banner button{
+            margin:0 .5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'login' %}" class="navbar_a">Iniciar sesión</a>
+        <a href="{% url 'post_list' %}" class="navbar_a">Ver blogs</a>
+    </nav>
+    <div class="container">
+        {%block content %}{% endblock %}
+    </div>
+    <div id="cookie-banner">
+        <p>Usamos cookies analíticas por que sí.</p>
+        <button id="btn-accept">Aceptar cookies</button>
+        <button id="btn-reject">Rechazar</button>
+        <a href="{% url 'politica_cookies' %}">Léete las malditas leyes!</a>
+    </div>
+
+    <script src="{% static 'js/cookie_consent.js' %}"></script>
+</body>
+</html>

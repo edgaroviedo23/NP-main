@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' media='screen' href='{% static "css/style.css" %}'>
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1 style="text-align: center;">Iniciar sesión</h1>
+
+        {% for mensaje in messages %}
+            <p style="color : red">{{ mensaje }}</p>
+        {% endfor %}
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+
+        <p>¿Aún no tienes cuenta?<a href="{% url 'registro' %}"> Registrate, it’s free!</a></p>
+        <p><a href="{% url 'home' %}">Vuelve al inicio</a></p>
+    </div>
+</body>
+</html>
