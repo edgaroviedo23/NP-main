@@ -8,6 +8,13 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post, Tag, Comment
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+#imports para API terceros y cache
+import requests
+from django.http import JsonResponse
+from django.views.decorators.cache import cache_page
+from django.conf import settings
+from django.shortcuts import render
+
 
 # vistas genericas para trabajar CRUD
 class PostListView(ListView):
@@ -153,3 +160,112 @@ def logoutView(request):
 
 def politica_cookies(request):
     return render(request, 'politica_cookies.html')
+
+
+# Vistas para API de terceros OPENWEATHER
+
+#@cache_page(60 * 30)  # Cache por 15 minutos
+
+def weather(request):
+    city = request.GET.get('city', 'santander')
+    params = {
+        'q': city,
+        'units': 'metric',
+        'appid': settings.OWM_KEY,
+        'lang': 'es'
+    }
+    r = requests.get(
+        'https://api.openweathermap.org/data/2.5/weather',
+        params=params, timeout=5
+    )
+    data = r.json()
+    respuesta = {
+        'city': data['name'],
+        'temp': data['main']['temp'],
+        'icon': data['weather'][0]['icon'],
+        'desc': data['weather'][0]['description'],
+    }
+    return JsonResponse(respuesta)
+
+# api counrty
+
+def pais_info(request):
+    nombre_pais = request.GET.get('pais', 'España')
+    url = f"https://restcountries.com/v3.1/name/{nombre_pais}"
+
+    try:
+        response = requests.get(url)
+        data = response.json()[0]
+
+        contexto = {
+            'nombre': data['name']['common'],
+            'capital': data['capital'][0] if 'capital' in data else 'No disponible',
+            'poblacion': data['population'],
+            'area': data['area'],
+            'moneda': list(data['currencies'].keys())[0],
+            'bandera': data['flags']['png'],
+        }
+    except Exception:
+        contexto = {
+            'error': 'No se pudo obtener información del país.'
+        }
+    return render(request, 'pais.html', contexto)
+
+# API PELICULAS
+
+import requests
+from django.conf import settings
+from django.shortcuts import render
+
+def peliculas(request):
+    query = request.GET.get('query', '')  
+    api_key = settings.NUEVO_API_KEY  
+    page = request.GET.get('page', 1)
+    url = f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={query}&page={page}'
+    
+    try:
+        response = requests.get(url)
+        response.raise_for_status() 
+        
+        data = response.json()
+        
+        if data['results']:
+            contexto = {
+                'peliculas': data['results'],
+                'query': query,
+                'page': page, 
+                'total_pages': data['total_pages'], 
+                'video' : True,
+            }
+        else:
+            contexto = {'error': 'No se encontraron películas.'}
+    
+    except requests.exceptions.RequestException as e:
+        contexto = {'error': f'Error al conectar con la API: {str(e)}'}
+    
+    return render(request, 'peliculas.html', contexto)
+
+
+# API DE ROBERTO:
+
+def recipe(request):
+    try:
+        response = requests.get("https://www.themealdb.com/api/json/v1/1/random.php", timeout=5)
+        data = response.json()
+        meal = data['meals'][0]
+
+        respuesta = {
+            'name': meal['strMeal'],
+            'category': meal['strCategory'],
+            'area': meal['strArea'],
+            'instructions': meal['strInstructions'],
+            'image': meal['strMealThumb'],
+            'tags': meal['strTags'],
+            'youtube': meal['strYoutube'],
+        }
+    except Exception as e:
+        respuesta = {
+            'error': 'No se pudo obtener información de la receta.'
+        }
+
+    return JsonResponse(respuesta)

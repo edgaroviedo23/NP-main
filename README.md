@@ -1,4 +1,3 @@
-
 proyecto básico en **Django** para desarrollar aplicación web. Dejo esta breve explicacion de como se realizo:
 
 1. **Instale Python** : Me asegure de tener Python 3.x y pip instalados.
@@ -12,5 +11,8 @@ proyecto básico en **Django** para desarrollar aplicación web. Dejo esta breve
 
 Estos son los paso que seguimos para realizar la pagino con django.
 
-
 Att: Edgar Oviedo.
+
+
+
+Instala python decouple, añade una llave en .env para que y que no aparezca en la subida.

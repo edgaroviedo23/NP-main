@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Buscar Películas {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'post_list' %}">Volver a blogs</a>
+    </nav>
+    <div class="container">
+        <h1>Buscar Películas</h1>
+        
+        <!-- Formulario de búsqueda -->
+        <form method="GET" action="{% url 'peliculas' %}">
+            <input type="text" name="query" placeholder="Buscar película..." value="{{ query }}">
+            <button type="submit">Buscar</button>
+        </form>
+
+        {% if query %}
+            <h2>Resultados de búsqueda para "{{ query }}"</h2>
+        {% endif %}
+
+        {% if peliculas %}
+            <ul>
+                {% for pelicula in peliculas %}
+                    <li>
+                        <strong>{{ pelicula.title }}</strong> - {{ pelicula.release_date }}
+                        <p>{{ pelicula.overview }}</p>
+                    </li>
+                    
+                    <li>
+                        <src src = f'{{ pelicula.video }}'> </src> 
+                    </li>
+                {% endfor %}
+            </ul>
+            
+            <!-- Paginación -->
+            <div class="pagination">
+                {% if page > 1 %}
+                    <a href="?query={{ query }}&page={{ page|add:'-1' }}">Anterior</a>
+                {% endif %}
+                <span>Página {{ page }} de {{ total_pages }}</span>
+                {% if page < total_pages %}
+                    <a href="?query={{ query }}&page={{ page|add:'1' }}">Siguiente</a>
+                {% endif %}
+            </div>
+        
+        {% else %}
+            {% if query %}
+                <p>No se encontraron películas.</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

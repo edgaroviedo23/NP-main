@@ -36,5 +36,25 @@
     </div>
 
     <script src="{% static 'js/cookie_consent.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+    <div id="meteo" class="tarjeta">
+        <p>Cargando meteo....</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/weather/?city=Santander')
+                .then(r => r.json())
+                .then(d => {
+                    document.getElementById('meteo').innerHTML =
+                        `<strong>${d.city}</strong><br>
+                        ${d.temp}&nbsp;ºC<br>
+                        <img src="https://openweathermap.org/img/wn/${d.icon}@2x.png" alt="${d.desc}" title="${d.desc}">`;
+                })
+                .catch(() => {
+                    document.getElementById('meteo').textContent = 'sin datos';
+                });
+        });
+    </script>
+    
 </body>
 </html>

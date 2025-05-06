@@ -4,6 +4,7 @@ from .views import PostListView, PostCreateView, PostDetailView, PostUpdateView,
 from .views import TagListView, TagCreateView, TagDeleteView, PostbyTagView
 from . import views_debug
 from django.conf import settings
+from nueva_app.views import pais_info, peliculas
 
 urlpatterns = [
     path('', views.home, name='home' ),
@@ -11,7 +12,7 @@ urlpatterns = [
     path('registro/', views.registroView, name='registro'),
     path('logout/', views.logoutView, name='logout'),
     path('post/', PostListView.as_view(), name='post_list'),
-    path('<int:pk>/', PostDetailView.as_view(), name='post_detail'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
     path('new/', PostCreateView.as_view(), name='post_create'),
     path('<int:pk>/edit/', PostUpdateView.as_view(), name='post_update'),
     path('<int:pk>/delete/', PostDeleteView.as_view(), name='post_delete'),
@@ -20,6 +21,10 @@ urlpatterns = [
     path('tags/<int:pk>/delete/', TagDeleteView.as_view(), name='tag_delete'),
     path('post_by_tag/<int:pk>/', PostbyTagView.as_view(), name='post_list_by_tag'),
     path('politica-cookies/', views.politica_cookies, name='politica_cookies'),
+    path('weather/', views.weather, name='weather'),
+    path('pais/', pais_info, name='pais_info'),
+    path('peliculas/', peliculas, name='peliculas'),
+
 ]
 
 

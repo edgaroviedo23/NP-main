@@ -10,5 +10,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('nueva_app.urls')), 
     path('favicon.ico', RedirectView.as_view(url=static_url('img/favicon.ico'), permanent=True)),
-     # Aquí se incluyen las rutas de nueva_app
+    path('api/', include('nueva_app.api_urls')),  
 ]
