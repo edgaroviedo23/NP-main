@@ -1,0 +1,1 @@
+gunicorno nuevo_proyecto.wsgi --log-file -

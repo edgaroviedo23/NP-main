@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
        });
    }
 
-   // Cargar Google Analytics
+
    function loadGA() {
        if (window.GA_INITIALIZED) return;
        window.GA_INITIALIZED = true;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
        gtag('config', 'G-XXXXX', { anonymize_ip: true }); // Reemplazar con tu ID
    }
 
-   // Comprobar la preferencia del tema (oscuro o claro) desde la cookie
+
    const savedTheme = getCookie(THEME_COOKIE);
    if (savedTheme === "dark") {
        document.body.classList.add("dark-mode");
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
        }
    }
 
-   // Alternar entre modo claro y oscuro
+   
    const themeButton = document.getElementById("btn-theme-toggle");
    if (themeButton) {
        themeButton.addEventListener("click", () => {

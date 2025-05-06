@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Información del País</title>
+</head>
+<body>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <h1>{{ nombre }}</h1>
+        <p><strong>Capital:</strong> {{ capital }}</p>
+        <p><strong>Población:</strong> {{ poblacion }}</p>
+        <p><strong>Región:</strong> {{ region }}</p>
+        <img src="{{ bandera }}" alt="Bandera de {{ nombre }}" width="200">
+    {% endif %}
+</body>
+</html>
