@@ -1,0 +1,299 @@
+[
+{
+  "model": "nueva_app.tag",
+  "pk": 6,
+  "fields": {
+    "name": "The world of html",
+    "posts": []
+  }
+},
+{
+  "model": "nueva_app.tag",
+  "pk": 7,
+  "fields": {
+    "name": "Django",
+    "posts": []
+  }
+},
+{
+  "model": "nueva_app.tag",
+  "pk": 8,
+  "fields": {
+    "name": "tag 1",
+    "posts": []
+  }
+},
+{
+  "model": "nueva_app.tag",
+  "pk": 9,
+  "fields": {
+    "name": "tag 2",
+    "posts": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$TD2EYBzgxOto2NzBsGV7el$vkfn6oWuYRNadgnRZ3YTMcZHvwBP2WKBOOaH74sht+s=",
+    "last_login": "2025-04-16T13:00:05.409Z",
+    "is_superuser": false,
+    "username": "Admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "Admin@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-16T12:59:51.802Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$KrZLwgy14jYXX0O8HhXk3e$tnsdrkqlH8ow1jCZqE2N8dujlaVjBLNQayeC7FIyIcs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "trap",
+    "first_name": "",
+    "last_name": "",
+    "email": "Admin@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-21T14:54:04.345Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$aieztpWxPNTB59iwNMpmsI$HQ4zVXUnvaspqQJ+7sP2Wj3j2pqhABzgcC0xX4q7qYA=",
+    "last_login": "2025-04-22T16:56:39.292Z",
+    "is_superuser": false,
+    "username": "traper",
+    "first_name": "",
+    "last_name": "",
+    "email": "Trap@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-21T14:57:58.281Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$EkNUz8TPV8orAxDQD8JuXL$smkAqzRxNxx18+J7xZOo+P2HL7ztwmk08xclV5o2aZo=",
+    "last_login": "2025-04-21T15:27:34.671Z",
+    "is_superuser": false,
+    "username": "Typebrey",
+    "first_name": "",
+    "last_name": "",
+    "email": "bryangonzalezpelaez@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-21T15:27:18.088Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$2ykG01ZrfsJdFg0W28osha$22OtRDSFdIuR0Q+9QIhi6J3ks4NvM9GMj7sPEKYI9s4=",
+    "last_login": "2025-04-21T15:40:27.406Z",
+    "is_superuser": true,
+    "username": "Admin2",
+    "first_name": "",
+    "last_name": "",
+    "email": "eladmin@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-04-21T15:39:25.393Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$vrEIKGRqX25Kwbpi7Rld7B$sXwCTEPpTESgnGQV8FyeZzGz4EBTSdVdb6BRZwve0dw=",
+    "last_login": "2025-04-21T15:50:20.765Z",
+    "is_superuser": false,
+    "username": "Manolo",
+    "first_name": "",
+    "last_name": "",
+    "email": "manolo@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-21T15:50:06.123Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$ghPU0t9Gbg1klmlec705QF$Ih/bU1WbvWBYvJIzdHOwwrBaTWUZBE//qLl1gD3pUms=",
+    "last_login": "2025-04-29T15:40:05.950Z",
+    "is_superuser": false,
+    "username": "anonimo",
+    "first_name": "",
+    "last_name": "",
+    "email": "anonimo@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-29T15:34:35.198Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "a5fw2dayqac7acbulf3xtncz70e0cyl7",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQRO9CHSHMx0DK9D4D2oUlOIlAMnYV5e6xJRdJN5r3Zt4swLaWsHVawpzYlVl2-e0Q4pPqAdID6r3x2Oq6zMgPhZ-086klet1O9--gQC_72qOK4MggZpQKhAURLXhnFOmsYlYex5ylGAmHPRB6KVGj8U6LPCjJPl8RLDiU:1uCIDk:2svZStSUdMaYBOjl8cc4YOA8w9W0Pn8dTxlb9Wvg3xQ",
+    "expire_date": "2025-05-20T13:20:28.449Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "caarwqbqdb6879d9fuukmqbsltzg86sb",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEwg0Bduu83kBkGpGrapI-V8d-1SRe6veec-1KJtrWlbSlzGkRdFKrT78aUH2XcgdxpvE06T-M6D6x3RR900f0k5Xk93L-DRkv71hQjx4wRQ0ZbjKtdjZVZxJ2DBWMdAVhPNTMbMA4BSRBIBMD7rgvq_QHj0jeN:1uBvGn:wxxIzINwDK3PT42lKV_Vw2TjssBjLngfGJuNqG5Ib7o",
+    "expire_date": "2025-05-19T12:50:05.239Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "t2ho3lb6n0tu6js11nh3y0v00pak8hc2",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlnrtb0xlPScwVr_cAA5UpxUiLuTSCmgmGbem3kLz-tS_drz7MckLsKI028XOD5z20F6cLtPMk5tmccgd0UetMvblPLrerh_B5V73daWtCrDEBVAJGRFZwVaMxtAtyXpkrE4NAjALkRANmgsERlwlqwSny-j3TXJ:1u6t3W:roOUs6CJ6vxFAxT_SzILU47-OgffEXzzXfjXiYCWm9s",
+    "expire_date": "2025-05-05T15:27:34.674Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vh7we0oe3dxg2dooy1gpai4b018le1th",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlleO_5R0nMGazfr4ABypDipEHcHSymgfTPzXiLhvpW0t7ymmcVZWHH63QjHR64d8B3rbZHjUrd1JtkVedAmrwvn5-Vw_w4KtvKtXSRrMWTHU9Qm2AHiEEBnckCgJmQdHHsNMarslfKoTeQueWMINIr3B7_MNok:1u6tVq:aBBbpQRXj-vVmQj-0GI30GPX5j6rf2xJvbP3NOuTvhI",
+    "expire_date": "2025-05-05T15:56:50.594Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-04-21T15:56:50.574Z",
+    "user": [
+      "Admin2"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "6",
+    "object_repr": "Manolo",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "nueva_app.post",
+  "pk": 12,
+  "fields": {
+    "title": "THML",
+    "content": "HTML (HyperText Markup Language) es un lenguaje de marcado que define la estructura y el contenido de una pßgina web. Permite a los navegadores web interpretar y mostrar texto, imßgenes, enlaces y otros elementos multimedia. HTML se basa en etiquetas, que son instrucciones que indican al navegador c¾mo representar un determinado contenido.",
+    "author": [
+      "Admin"
+    ],
+    "created_at": "2025-04-21T14:30:37.389Z",
+    "tags": []
+  }
+},
+{
+  "model": "nueva_app.post",
+  "pk": 13,
+  "fields": {
+    "title": "DJANGO",
+    "content": "Django es un framework web de alto nivel, escrito en Python, que facilita el desarrollo rßpido y eficiente de aplicaciones web. Django se enfoca en la simplicidad y la seguridad, permitiendo a los desarrolladores crear sitios web y aplicaciones web de forma mßs rßpida y segura. Es conocido por su facilidad de uso y su amplia gama de componentes integrados, lo que lo convierte en una excelente opci¾n para proyectos de desarrollo web.",
+    "author": [
+      "Admin"
+    ],
+    "created_at": "2025-04-21T14:30:55.725Z",
+    "tags": []
+  }
+},
+{
+  "model": "nueva_app.post",
+  "pk": 14,
+  "fields": {
+    "title": "Typebrey",
+    "content": "https://youtube.com/playlist?list=OLAK5uy_mjTw7MxnSbaOgJK6kio6Qnp4ZlBP0Lc9Y&si=QbiZl4MHJhtp2q0D",
+    "author": [
+      "Typebrey"
+    ],
+    "created_at": "2025-04-21T15:28:16.454Z",
+    "tags": []
+  }
+},
+{
+  "model": "nueva_app.post",
+  "pk": 15,
+  "fields": {
+    "title": "Ya estoy dentro",
+    "content": "Hola que tal, me acabo de registrar",
+    "author": [
+      "Manolo"
+    ],
+    "created_at": "2025-04-21T15:51:49.301Z",
+    "tags": []
+  }
+},
+{
+  "model": "nueva_app.post",
+  "pk": 17,
+  "fields": {
+    "title": "fdfsdfs",
+    "content": "fdsf",
+    "author": [
+      "traper"
+    ],
+    "created_at": "2025-04-22T13:36:16.402Z",
+    "tags": []
+  }
+},
+{
+  "model": "nueva_app.post",
+  "pk": 18,
+  "fields": {
+    "title": "soy traper",
+    "content": "ais",
+    "author": [
+      "traper"
+    ],
+    "created_at": "2025-04-22T14:09:19.370Z",
+    "tags": []
+  }
+},
+{
+  "model": "nueva_app.post",
+  "pk": 21,
+  "fields": {
+    "title": "jumgj",
+    "content": "yjmg",
+    "author": [
+      "anonimo"
+    ],
+    "created_at": "2025-05-02T16:43:44.555Z",
+    "tags": [
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}
+]
