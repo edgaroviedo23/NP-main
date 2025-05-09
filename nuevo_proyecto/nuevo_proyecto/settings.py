@@ -77,8 +77,8 @@ DATABASE_URL = config('DATABASE_URL')
 # DATABASE_PGA= config('DATABASE_PGA')
 DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL'),
+        ssl_require=True,
         conn_max_age=600,
-        SLL_REQUIRE=True,
     )
 }
 
