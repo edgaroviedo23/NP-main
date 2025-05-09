@@ -14,9 +14,12 @@ from django.http import JsonResponse
 from django.views.decorators.cache import cache_page
 from django.conf import settings
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # vistas genericas para trabajar CRUD
+
+
 class PostListView(ListView):
     model = Post
     template_name = "post_list.html"
@@ -46,16 +49,16 @@ class PostDetailView(FormMixin, DetailView):
             messages.success(request, "Comentario añadido con éxito")
             return HttpResponseRedirect(self.get_success_url())  # Redirige a la página de detalles del post
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    form_class = PostForm
+    form_class = PostForm  
     template_name = "post_create.html"
     success_url = reverse_lazy('post_list')
+    login_url = "login.html"
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        self.object = form.save()  # Guarda el post sin los tags
-        return redirect(self.get_success_url())
+        form.instance.author = self.request.user 
+        return super().form_valid(form)
 
 class PostUpdateView(UpdateView):
     model = Post
