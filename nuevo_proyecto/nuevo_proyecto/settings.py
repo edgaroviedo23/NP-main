@@ -151,4 +151,4 @@ CACHES = {
     }
 }
 
-# CSRF_TRUSTED_ORIGINS = ["https://*.railway.app", "http://"]
+CSRF_TRUSTED_ORIGINS = ["https://*.railway.app",]
